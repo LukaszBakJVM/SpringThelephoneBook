@@ -13,8 +13,8 @@ public class ThelephoneBookApplication {
 
     public static void main(String[] args) {
         ConfigurableApplicationContext run = SpringApplication.run(ThelephoneBookApplication.class, args);
-        PhoneService phoneService =run.getBean(PhoneService.class);
-        Loop loop =run.getBean(Loop.class);
+
+        Loop loop =run.getBean(Loop.class,PhoneService.class);
         loop.controlLoop();
 
 
